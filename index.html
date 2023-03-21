@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search Images</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Find patterns and detect biases.</h1>
+		<button class="btn-1" id="comparePrompts">Compare Prompts</button>
+		<script src="js/buttonClick.js"></script>
+		<p id="topic"></p>
+		
+        <h2>Search for different prompts to see all the data that 
+            has been collected related to it and detect biases. 
+            Some of the trending topics being searched are 
+            doctors, firefighters, CEO, family, professional hairstyle.</h2>
+		<form>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search for key terms">
+                <button type="submit" id="search-button"> 
+                    <img src="images/ico-search.png" alt="Search"/>
+                </button>
+            </div>
+		</form>
+	</header>
+	<main>
+		<div class="gallery">
+		</div>
+	</main>
+	<script src="js/imageSearch.js"></script>
