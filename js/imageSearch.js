@@ -1,17 +1,39 @@
-const form = document.querySelector('form');
-const gallery = document.querySelector('.gallery');
+//import similarity from "string-cosine-similarity";
 
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
+const form = document.querySelector("form");
+const gallery = document.querySelector(".gallery");
 
-    const searchTerm = form.querySelector('input').value;
-    const url = `https://source.unsplash.com/1600x900/?${searchTerm}`;
+const handleSearch = async (query) => {
+  let response = await fetch(`https://ddb.m4ke.org/search?q=${query}`);
+  let data = await response.json();
+  let images_1 = data.results.map((result) => [
+    `https://diffusiondb.m4ke.org/${result.id}.jpg`,
+    result.p,
+  ]);
+  response = await fetch(`https://lexica.art/api/v1/search?q=${query}`);
+  let res = await response.json();
+  //remove nudity images
+  res.images = res.images.filter((image) => image.nsfw === false);
+  let images_2 = res.images.map((result) => [result.src, result.prompt]);
+  //put both images together and sort by prompt and remove duplicates
+  let images = images_1.concat(images_2);
+  /*images.sort((a, b) => {
+    return similarity(b[1], query) - similarity(a[1], query);
+  });*/
+  return images;
+};
 
-    gallery.innerHTML = '';
-    for (let i = 0; i < 8; i++) {
-        const img = document.createElement('img');
-        img.src = `${url}&${i}`;
-        img.alt = searchTerm;
-        gallery.appendChild(img);
-    }
+form.addEventListener("submit", async function (event) {
+  event.preventDefault();
+
+  const searchTerm = form.querySelector("input").value;
+  const images = await handleSearch(searchTerm);
+
+  gallery.innerHTML = "";
+  for (let i = 0; i < 12; i++) {
+    const img = document.createElement("img");
+    img.src = images[i][0];
+    img.alt = images[i][1];
+    gallery.appendChild(img);
+  }
 });

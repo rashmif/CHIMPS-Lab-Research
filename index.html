@@ -1,47 +1,66 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Search Images</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<header>
-		<div class="header-container">
-			<div class="left-aligned">
-				<h1>Find patterns and detect biases.</h1>
-			</div>
-			<div class="right-aligned">
-				<button class="btn-1" id="comparePrompts">
-					<img src="images/iconComparePrompt.png" alt="Search" width="20", height="20"/>
-					<span> Compare Prompts </span>
-				</button>
-				<button class="btn-1" id="comparePrompts">
-					<img src="images/iconAddThread.png" alt="Search" width="20", height="20"/>
-					<span> New Thread </span>
-				</button>
-			</div>
-			<script src="js/buttonClick.js"></script>
-		</div>
+  <head>
+    <title>Search Images</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="left-aligned">
+          <h1>Find patterns and detect biases.</h1>
+        </div>
+        <div class="right-aligned">
+          <button class="btn-1" id="comparePrompts">
+            <img
+              src="images/iconComparePrompt.png"
+              alt="Search"
+              width="20"
+              ,
+              height="20"
+            />
+            <span> Compare Prompts </span>
+          </button>
+          <button class="btn-1" id="comparePrompts">
+            <img
+              src="images/iconAddThread.png"
+              alt="Search"
+              width="20"
+              ,
+              height="20"
+            />
+            <span> New Thread </span>
+          </button>
+        </div>
+        <script src="js/buttonClick.js"></script>
+      </div>
 
-		<div id="searchInterface" class="hidden">
-			This is the content that will be displayed when the button is clicked.
-		</div>
+      <div id="searchInterface" class="hidden">
+        This is the content that will be displayed when the button is clicked.
+      </div>
 
-        <h2>Search for different prompts to see all the data that 
-            has been collected related to it and detect biases. 
-            Some of the trending topics being searched are 
-            doctors, firefighters, CEO, family, professional hairstyle.</h2>
-		<form>
-			<div class="search-container">
-				<input type="text" id="search-input" placeholder="Search for key terms">
-				<button type="submit" id="search-button"> 
-					<img src="images/iconSearch.png" alt="Search"/>
-				</button>
-			</div>
-		</form>
-		<p id="topic"></p>
-	</header>
-	<main>
-		<div class="gallery"></div>
-		<script src="js/imageSearch.js"></script>
-	</main>
+      <h2>
+        Search for different prompts to see all the data that has been collected
+        related to it and detect biases. Some of the trending topics being
+        searched are doctors, firefighters, CEO, family, professional hairstyle.
+      </h2>
+      <form>
+        <div class="search-container">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search for key terms"
+          />
+          <button type="submit" id="search-button">
+            <img src="images/iconSearch.png" alt="Search" />
+          </button>
+        </div>
+      </form>
+      <p id="topic"></p>
+    </header>
+    <main>
+      <div class="gallery"></div>
+      <script src="js/imageSearch.js"></script>
+    </main>
+  </body>
+</html>
