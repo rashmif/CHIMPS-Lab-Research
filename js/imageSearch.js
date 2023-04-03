@@ -1,11 +1,11 @@
 //import similarity from "string-cosine-similarity";
 
-const searchParams = new URLSearchParams(window.location.search);
-const query = searchParams.get("search");
+// const searchParams = new URLSearchParams(window.location.search);
+// const query = searchParams.get("search");
 // const form = document.querySelector("form");
 // const gallery = document.querySelector(".gallery");
 const form = document.querySelector("#form-one");
-const gallery = document.querySelector("#gallery-one");
+const gallery = document.querySelector("#search-gallery-one");
 
 const handleSearch = async (query) => {
   let response = await fetch(`https://ddb.m4ke.org/search?q=${query}`);

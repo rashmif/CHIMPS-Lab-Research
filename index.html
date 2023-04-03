@@ -34,7 +34,8 @@
 			</form>
 			<div class="right-aligned">
 				<label class="switch">
-					<input type="checkbox">
+					<script src="js/switchSearchLayout.js"></script>
+					<input type="checkbox" id="switchLayout" onchange="toggleLayout()">
 					<span class="slider round"></span>
 				</label>
 				<body1-medium> compare prompts </body1-medium>
@@ -46,15 +47,9 @@
 
 	</header>
 
-	<section>
-		<h3> How does it work? </h3>
-		<div class="box-container">
-			<img src="images/HowItWork-index/HowItWork-A.png" />
-			<img src="images/HowItWork-index/HowItWork-B.png" />
-			<img src="images/HowItWork-index/HowItWork-C.png" />
-			<img src="images/HowItWork-index/HowItWork-D.png" />
-		</div>
-	</section>
+	<div style="margin-top:-2%; margin-left: 8%; margin-right: 8%; margin-bottom: 7%;">
+		<img src="images/HowItWork-index/HowItWork-total.png" width="100%" />
+	</div>
 
 	<div style="margin-left: 8%; margin-right: 8%;">
 		<img src="images/TrendingThread-index.png" width="100%" />
